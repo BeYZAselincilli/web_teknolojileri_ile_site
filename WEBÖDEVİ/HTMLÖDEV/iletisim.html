@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--FONT AWESOME CSS-->
+ <link rel="stylesheet" href="css/fontawesome.css">
+ <link rel="stylesheet" href="css/fontawesome.min.css">
+ <!--BOOTSTRAP CSS-->
+    <link href="css/bootstrap.css" rel="stylesheet" >
+    <!--STYLE CSS-->
+    <link href="css/style.css" rel="stylesheet" >
+
+    <title>SİTEM</title>
+  </head>
+  <body>
+    <nav class="navbar6 navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+            <button class="navbar-togler" data-toggle="collapse" data-target="#nvbCollapse">
+                <span class="navbar-toggler-icon"></span></button>
+            <a href="html1.html" class="navbar-brand">HAKKIMDA</a>
+            <div class="collapse navbar-collapse" id="nvbCollapse">
+                <ul class="navbar-nav mr-auto" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="egitim.html">EĞİTİMİM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sehrim.html">ŞEHRİM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mirasımız.html">MİRASIMIZ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ilgialanım.html">İLGİ ALANLARIM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html">İLETİŞİM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">LOGİN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+ 
+    <header id="headerSection6">
+        <div><div  class="overlay">
+            <div  class="container ">
+                <div class="row text-center">
+                    <div id="hakkında" class="col-lg-6 ">
+                        <h2 class="mb-3"></h2>
+                        <h2>İLETİŞİM</h2>
+                        <p>Merhabalar. Sizlere ve sevdiklerinize daha iyi hizmet sunabilmek, merak edilenleri sormak, şikayet ve beğeni belirtmek veya reklam vermek için bize ulaşabilirsiniz.</p>
+                        <h4>ADRES</h4>
+                        <p>Kemalpaşa, Esentepe Kampüsü, Üniversite Cd., 54050 Serdivan/Sakarya</p>
+                        <h4>EMAİL</h4>
+                        <p>beyzaselin@g-hotmail.com</p>
+                        <h4>TELEFON NUMARASI</h4>
+                        <p>555 444 333</p>
+                        
+                    </div>
+                  
+                        <div id="main" >
+                            <form id="uyelik_formu" classs=" col-lg-6 form group justify-content-center contact top"action="form.php" onsubmit="return isValid(this)" method="POST">
+                               
+                                <label >Kullanıcı Adı:</label>
+                                <input type="text" class="input-field" name="adi">
+                                <br>
+                            
+                                <label>Kullanıcı Soyadı:</label>
+                                <input type="text"  class="input-field" name="soyadi">
+                                <br>
+                            
+                                <label>E-Mail:</label>
+                                <input type="text"  class="input-field" name="email">
+                                <br>
+                                
+                                <label>Cinsiyet:</label>
+                                <select id="cinsiyet" name="cinsiyet"  class="input-field">
+                                    <option value=""></option>
+                                    <option value="kız">Kız</option>
+                                    <option value="erkek">Erkek</option>
+                                </select> 
+                                
+                                <label >Yaş Grubu:</label>
+                                  <div class="input-field" name="yasgrubu" id="yasgrubu">
+                                    <input type="radio" name="yas" value="çocuk" checked>ÇOCUK
+                                    <input type="radio" name="yas" value="genç">GENÇ
+                                    <input type="radio" name="yas" value="yetişkin">YETİŞKİN
+                                    <input type="radio" name="yas" value="yaşlı">YAŞLI</div>
+                                   
+                                    <label>İletişim Sebebi:</label>
+                                    <div class="input-field" name="dil" id="ile">
+                                    <input type="checkbox" name="dil1" value="ing">SORU
+                                    <input type="checkbox" name="dil2" value="fr">ŞİKAYET 
+                                    <input type="checkbox" name="dil3" value="alm">BEĞENİ
+                                    <input type="checkbox" name="dil4" value="arp">REKLAM
+                                    <input type="checkbox" name="dil5" value="rus">DİĞER</div>
+                                   
+                                    <label>Mesajınız:</label>
+                                    <textarea name="mesaj" id="mes"class="input-field" > </textarea>
+                                    
+                                <input type="reset" class="button1" value="TEMİZLE">
+                                <input type="submit" class="button2" value="GÖNDER">
+                            </form>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <script>
+
+function isValid(frm)
+{
+    var adi = frm.adi.value;
+    var soyadi = frm.soyadi.value;
+    var email = frm.email.value;
+   var atpos=email.indexOf("@");
+    var dotpos=email.lastIndexOf(".");
+    var cinsiyet=frm.cinsiyet.value;
+    var mesaj=frm.mesaj.value;
+
+    if ( adi==null || adi==""  )
+    {
+        alert("kullanıcı adını boş bırakmayın");
+        return false;
+    }
+    if ( soyadi==null || soyadi==""  )
+    {
+        alert("kullanıcı soyadını boş bırakmayın");
+        return false;
+    }
+
+    if ( email==null||email=="")
+    {
+        alert("e-maili boş bırakmayın");
+        return false;
+    }
+    if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+    {
+        alert("Geçerli email adresi girin");
+        return false;
+    }      
+    if ( cinsiyet==null || cinsiyet==""  )
+    {
+        alert("cinsiyeti boş bırakmayın");
+        return false;}
+
+        if ( dil==null || dil==""  )
+    {        alert("mesaj amacınızı boş bırakmayın");
+        return false;}
+
+        if ( mesaj==null || mesaj==""  )
+    {
+        alert("mesaj alanını boş bırakmayın");
+        return false;}
+
+
+
+{
+    return true;
+}
+}
+    </script>
+      
+
+
+
+
+      <footer id="footer6" class="sectionArea">
+        <div class="container">
+            <div class="col3">
+                <div class="footerItem">
+                    <h3>SİTEME TEKRARDAN HOŞGELDİNİZ</h3>
+                    
+                    <p>siteme umarım severek devam edersiniz</p>
+                </div>
+            </div>
+    
+            <div class="col3">
+                <div class="footerItem">
+                    <h3>SAYFA LİNKLERİMİZ</h3>
+    <ul class="footerlinks">
+        <li> <a href="html1.html">ANASAYFA</a></li>
+        <li> <a href="egitim.html">EĞİTİMİM</a></li>
+        <li> <a href="sehrim.html">ŞEHRİM</a></li>
+        <li> <a href="mirasımız.html">MİRASIMIZ</a></li>
+        <li> <a href="ilgialanım.html">İLGİ ALANLARIM</a></li>
+        <li> <a href="iletisim.html">İLETİŞİM</a></li>
+        <li> <a href="login.html">LOGİN</a></li>
+    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script  src="js/jquery-3.6.0.js" ></script>
+
+    <script src="js/popper.min.js"></script>
+   
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
+  </html>
